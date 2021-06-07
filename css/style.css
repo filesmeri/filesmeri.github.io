@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Economica:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+html {
+    background-color: rgb(35, 36, 36);
+}
+
+p {
+    color: white;
+}
+
+body {
+    font-family: "Economica", sans-serif;
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+#header {
+    height:10%;
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    /* background-color: tomato; */
+}
+
+#hamburger-menu{
+    color: white;
+    font-size: 5vw;
+    margin: 5% 5%;
+    text-decoration: underline;
+}
+
+
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay */   
+    height: 0;
+    width: 100%;
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    display: flex;
+    justify-content: center;
+    left: 0;
+    top: 0;
+    background-color: rgb(35, 36, 36); /* fallback color */
+    background-color:rgba(35, 36, 36,0.9); /* w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.4s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  }
+  
+  /* Position the content inside the overlay */
+  .overlay-content {
+    height: auto;    
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+   
+  }
+  
+  /* The navigation links inside the overlay */
+  .overlay-content a {
+    margin: 5%;
+    font-size: 10vw;
+    color: #000000;
+    text-transform: uppercase;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+    cursor: pointer;
+    background-color: rgb(197, 91, 41);
+    padding: 2.5% 0;
+    width: 90%;
+    box-shadow: 5px 5px 5px #000000;
+    transition: scale 0.9s ease-out,background-color 0.9s ease-out;
+    border-radius: 10px;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .overlay a:active {
+    background-color: rgb(252, 124, 65);
+    transform: scale(0.98);    
+  }
+  
+  /* Position the close button (top right corner) */
+  .overlay .closebtn {
+    color: #ffffff;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 3rem;
+  }
+
+
+#main-area {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    
+    height: 75%;
+    width: 100%;
+} 
+
+#current-num-wrapper {
+    box-shadow: -2px 2px 0px 1px white inset, 2px -2px 0px 1px white inset;
+    /* box-shadow: -2px 2px 0px 1px white inset, 2px -2px 0px 1px white inset, 0px 10px 25px 25px rgb(197, 91, 41) inset; */
+    height: 90%;
+    width: 90%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;    
+    border-radius: 10px;
+    transition: all 2s ease-in;
+}
+
+.crowded{
+    background: rgb(255,91,47);
+    background: linear-gradient(0deg, rgba(255,91,47,1) 0%, rgba(108,54,40,1) 4%, rgba(35,36,36,1) 30%, rgba(35,36,36,1) 70%, rgba(138,62,41,1) 96%, rgba(255,91,47,1) 100%);
+    transition: all 2s ease-in;
+}
+
+#current-num{
+    font-size: 30vw;
+}
+
+#total-num-wrapper{
+    border-top: solid 2px white;
+    border-bottom: solid 2px white;
+    width: 90%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    text-transform: uppercase;
+}
+
+#total-num{
+    font-size: 7vw;
+    margin-top: 10px;
+}
+
+.num-button {
+    width: 90%;
+    height: 30%;
+    margin: 3% 0;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 10vw; 
+    border-radius: 10px;  
+}
+
+.num-button{
+    text-transform: uppercase;
+    box-shadow: 5px 5px 5px #000000;
+    transition: scale 0.9s ease-out,background-color 0.9s ease-out;
+}
+
+#in-button{
+    background-color: rgb(96, 168, 156); 
+    color:black;    
+    /* border: solid 2px rgb(96, 168, 156); */
+    /* color: rgb(96, 168, 156); */    
+}
+
+#in-button:active{
+    background-color: rgb(126, 219, 204);  
+    transform: scale(0.98);
+}
+
+#out-button{
+    background-color:  rgb(197, 91, 41);
+    color:black;   
+    /* border: solid 2px rgb(197, 91, 41);
+    color: rgb(197, 91, 41); */
+}
+
+#out-button:active{
+    background-color: rgb(252, 124, 65);
+    transform: scale(0.98);
+}
+
+.disabled{
+    opacity: 0.5;
+}
+
+
+@media (orientation: landscape) {
+    .num-button {        
+        font-size: 10vh;   
+    }
+    #total-num{
+        font-size: 7vh;        
+    }
+    #current-num{
+        font-size: 30vh;
+    }
+    #main-area {
+        display: grid;
+        grid-template-columns: auto 40% 40% auto;
+        grid-template-rows: 30% 30% auto;
+        justify-content: center;
+        align-content: center;
+        justify-items: center;
+        column-gap: 2.5%;
+        row-gap: 5%;
+    }
+    #current-num-wrapper{
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+        width:100%;
+        height: 100%;
+    }
+    #in-button{
+        grid-column: 3 / 4;
+        width:100%;
+        height:100%;
+        justify-self: center;
+        margin: 0;
+        
+    }
+    #out-button{
+        grid-column: 3 / 4;
+        width:100%;
+        height: 100%;
+        justify-self: center;
+    }
+    #total-num-wrapper{
+        grid-column: 2 / 4;
+        width:100%;
+    }
+    #hamburger-menu{        
+        font-size: 5vh;
+        margin: 0 9%;        
+    }
+
+    .overlay-content a{
+        margin: 5%;
+        width:30%;
+        font-size: 5vh;
+    } 
+
+  }
+
+#footer {
+    height:10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: tomato; */
+}
