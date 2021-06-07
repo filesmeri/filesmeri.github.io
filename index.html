@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visitor Counter</title>
+    <meta name="pinterest" content="nohover">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="odometer-theme-train-station.css">
+</head>
+<body>
+    <div id="myNav" class="overlay">
+        <!-- Button to close the overlay navigation -->
+        <a href="#" class="closebtn" onclick="closeNav()">X</a>                                                
+        <!-- Overlay content -->
+        <div class="overlay-content">
+            <a id="reset-total" onclick="closeNav()">RESET TOTAL</a>
+            <a id="reset-current" onclick="closeNav()">RESET CURRENT</a>
+            <!-- <a href="#home" onclick="closeNav()">Home</a>
+            <a href="#chiSiamo" onclick="closeNav()">Chi siamo</a>
+            <a href="#coltivazione" onclick="closeNav()">Coltivazione</a>
+            <a href="#prodotti" onclick="closeNav()">Prodotti</a>
+            <a href="#contatti" onclick="closeNav()">Dove siamo</a> -->
+        </div>                                                
+    </div>
+    <header id="header">        
+            <a id="hamburger-menu" href="#" onclick="openNav()">MENU</a>         
+    </header>
+    <main id="main-area">
+        <div class="num-button" id="in-button">in</div>
+        <div id="current-num-wrapper">
+            <p id="current-num" class="odometer">0</p>                
+        </div>
+        <div class="num-button" id="out-button">out</div>
+        <div id="total-num-wrapper">
+            <p>Total number of visitors</p>
+            <p id="total-num" class="odometer">0</p>
+            </div>           
+    </main>
+    <footer id="footer">
+        <!-- <div id="reset-total">RESET TOTAL</div>
+        <div id="reset-current">RESET CURRENT</div> -->
+    </footer>  
+
+    <script src="https://content.codecademy.com/projects/jquery.min.js"></script> 
+    <script src="odometer.js"></script>
+    <script src='script.js'></script>
+
+</body>
+</html>
